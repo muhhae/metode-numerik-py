@@ -1,0 +1,11 @@
+while True:
+    i += 1
+    xc = xb-f(xb)*(xb-xa)/(f(xb)-f(xa))
+    if abs(f(xc))<0.1:
+        print('Akar :',xc,'dalam : %d iterasi. '%i)
+        break
+    else:
+        if f(xc)*f(xa) > 0:
+            xa = xc
+        else:
+            xb = xc

@@ -1,0 +1,31 @@
+Python 3.11.2 (tags/v3.11.2:878ead1, Feb  7 2023, 16:38:35) [MSC v.1934 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> f = lambda x:x**3
+>>> f(2)
+8
+>>> ft = lambda f, x, h: (-3*f(x) + 4*f(x+h) - f(x+2h))/(2*h)
+SyntaxError: invalid decimal literal
+>>> ft = lambda f, x, h: (-3*f(x) + 4*f(x+h) - f(x+2*h))/(2*h)
+>>> ft(f, 2, 0.1)
+11.980000000000004
+>>> ft(f, 2, 0.0001)
+11.999999980050191
+>>> ft(f, 1, 0.1)
+2.9800000000000093
+>>> ft(f, 1, 0.0001)
+2.9999999799978916
+>>> ft2 = lambda f, x, h: ( 2*f(x) - 5 * f(x+h) + 4 * f(x+2h) - f(x+3h) )/h**2
+SyntaxError: invalid decimal literal
+>>> ft2 = lambda f, x, h: ( 2*f(x) - 5 * f(x+h) + 4 * f(x+2*h) - f(x+3*h) )/h**2
+>>> ft2(f, 1, 0.1)
+5.999999999999694
+>>> ft2(f, 2, 0.1)
+12.000000000000808
+>>> ft3 = lambda f, x, h: ( -5 * f(x) + 18 * f(x+h) - 24 * f(x+2*h) + 14 * f(x+3*h) - 3 * f(x+4*h))/(2*h**3)
+>>> ft3(f, 1, 0.1)
+6.000000000008219
+>>> ft3(f, 2, 0.1)
+5.999999999950488
+>>> ft4 = lambda f, x, h: ( 3 * f(x) -14 * f(x+h) + 26 * f(x+2*h) - 24 * f(x+3*h) + 11 * f(x+4*h) - 2 * f(x+5*h))/h**4
+>>> ft4(f, 1, 0.1)
+-1.7763568394002502e-10

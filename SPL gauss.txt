@@ -1,0 +1,351 @@
+Python 3.11.2 (tags/v3.11.2:878ead1, Feb  7 2023, 16:38:35) [MSC v.1934 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+A=[[1,2,3],[4,5,6],[7,8,9]]
+a
+Traceback (most recent call last):
+  File "<pyshell#1>", line 1, in <module>
+    a
+NameError: name 'a' is not defined. Did you mean: 'A'?
+A
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+A=[[[1,2,3],[4,5,6],[7,8,9]],[[1,2,3],[4,5,6],[7,8,9]],[[1,2,3],[4,5,6],[7,8,9]]]
+A
+[[[1, 2, 3], [4, 5, 6], [7, 8, 9]], [[1, 2, 3], [4, 5, 6], [7, 8, 9]], [[1, 2, 3], [4, 5, 6], [7, 8, 9]]]
+A=[[1,2,3],[4,5,6],[7,8,9]]
+A
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+A[1][0]
+4
+A[1][0] = 10
+A
+[[1, 2, 3], [10, 5, 6], [7, 8, 9]]
+A[1][0]
+10
+b=((1,2,3),(4,5,6),(7,8,9))
+b
+((1, 2, 3), (4, 5, 6), (7, 8, 9))
+b[1][0]
+4
+b[1][0] = 10
+Traceback (most recent call last):
+  File "<pyshell#14>", line 1, in <module>
+    b[1][0] = 10
+TypeError: 'tuple' object does not support item assignment
+[i for i in range(9)]
+[0, 1, 2, 3, 4, 5, 6, 7, 8]
+i[3]
+Traceback (most recent call last):
+  File "<pyshell#16>", line 1, in <module>
+    i[3]
+NameError: name 'i' is not defined. Did you mean: 'id'?
+[[2]]
+[[2]]
+[[i*3+j for j in range(1,4)]for i in range(3)]
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+V[[i*3+j for j in range(1,4)]for i in range(3)]
+SyntaxError: invalid syntax
+V[[i*3+j for j in range(1,4)] for i in range(3)]
+SyntaxError: invalid syntax
+A[1] = [7,6,5]
+A
+[[1, 2, 3], [7, 6, 5], [7, 8, 9]]
+A = [[i*3+j for j in range(1,4)] for i in range(3)]
+A
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+A[1] = [7,6,5]
+A
+[[1, 2, 3], [7, 6, 5], [7, 8, 9]]
+def bbsrt(A):
+    n = len(A)
+    for i in range(n-1):
+        for j in range(n-1,i,-1):
+            if A[i]>A[j]:A[i],A[j]=A[j],A[i]
+
+            
+bbsrt(A)
+
+
+KeyboardInterrupt
+A
+[[1, 2, 3], [7, 6, 5], [7, 8, 9]]
+bbsrt(A)
+A
+[[1, 2, 3], [7, 6, 5], [7, 8, 9]]
+def bbsrt(A):
+    n = len(A)
+    for i in range(n-1):
+        for j in range(n-1,i,-1):
+            if A[i]<A[j]:A[i],A[j]=A[j],A[i]
+
+            
+bbsrt(A)
+
+A
+[[7, 8, 9], [7, 6, 5], [1, 2, 3]]
+def bbsrtbesarkecil(A):
+    n = len(A)
+    for i in range(n-1):
+        for j in range(n-1,i,-1):
+            if A[i]<A[j]:A[i],A[j]=A[j],A[i]
+
+            
+def bbsrtkecilbesar(A):
+    n = len(A)
+    for i in range(n-1):
+        for j in range(n-1,i,-1):
+            if A[i]>A[j]:A[i],A[j]=A[j],A[i]
+
+            
+bbsrtkecilbesar(A)
+A
+[[1, 2, 3], [7, 6, 5], [7, 8, 9]]
+def bbsrt(A,UD=False):
+    n = len(A)
+    for i in range(n-1):
+        for j in range(n-1,i,-1):
+            if UD:
+                if A[i]>A[j]:A[i],A[j]=A[j],A[i]
+            else :
+                if A[i]<A[j]:A[i],A[j]=A[j],A[i]
+
+                
+A
+[[1, 2, 3], [7, 6, 5], [7, 8, 9]]
+bbsrt(A, True)
+A
+[[1, 2, 3], [7, 6, 5], [7, 8, 9]]
+bbsrt(A, UD = True)
+A
+[[1, 2, 3], [7, 6, 5], [7, 8, 9]]
+bbsrt(A)
+A
+[[7, 8, 9], [7, 6, 5], [1, 2, 3]]
+a
+Traceback (most recent call last):
+  File "<pyshell#62>", line 1, in <module>
+    a
+NameError: name 'a' is not defined. Did you mean: 'A'?
+a
+Traceback (most recent call last):
+  File "<pyshell#63>", line 1, in <module>
+    a
+NameError: name 'a' is not defined. Did you mean: 'A'?
+A
+[[7, 8, 9], [7, 6, 5], [1, 2, 3]]
+bbsrt(A, True)
+A
+[[1, 2, 3], [7, 6, 5], [7, 8, 9]]
+B[[-10, 3, 2],[4,5,6],[1,2,3]]
+Traceback (most recent call last):
+  File "<pyshell#67>", line 1, in <module>
+    B[[-10, 3, 2],[4,5,6],[1,2,3]]
+NameError: name 'B' is not defined. Did you mean: 'b'?
+B = [[-10, 3, 2],[4,5,6],[1,2,3]]
+bbsrt(B)
+B
+[[4, 5, 6], [1, 2, 3], [-10, 3, 2]]
+def labsc(H1,H2):
+    h1=[abs(e) for e in H1]
+    h2=[abs(e) for e in H2]
+    return h1>h2
+C,D=[1,2,3],[-3,1,4]
+SyntaxError: invalid syntax
+Y,Z=[1,2,3],[-3,1,4]
+C,D=[1,2,3],[-3,1,4]
+def labsc(H1,H2):
+    h1=[abs(e) for e in H1]
+    h2=[abs(e) for e in H2]
+    return h1>h2
+
+labs(C,D)
+Traceback (most recent call last):
+  File "<pyshell#80>", line 1, in <module>
+    labs(C,D)
+NameError: name 'labs' is not defined. Did you mean: 'labsc'?
+
+labsc(C,D)
+False
+def bbsrt(A,UD=False):
+    n = len(A)
+    for i in range(n-1):
+        for j in range(n-1,i,-1):
+            if UD:
+                if labsc(A[i],[A[j]):A[i],A[j]=A[j],A[i]
+            else :
+                if !labsc(A[i],[A[j]):A[i],A[j]=A[j],A[i]
+                          
+SyntaxError: closing parenthesis ')' does not match opening parenthesis '['
+def bbsrt(A,UD=False):
+    n = len(A)
+    for i in range(n-1):
+        for j in range(n-1,i,-1):
+            if UD:
+                if labsc(A[i],A[j]):A[i],A[j]=A[j],A[i]
+            else :
+                if !labsc(A[i],[A[j]):A[i],A[j]=A[j],A[i]
+                          
+SyntaxError: closing parenthesis ')' does not match opening parenthesis '['
+def bbsrt(A,UD=False):
+    n = len(A)
+    for i in range(n-1):
+        for j in range(n-1,i,-1):
+            if UD:
+                if labsc(A[i],A[j]):A[i],A[j]=A[j],A[i]
+            else :
+                if !labsc(A[i],A[j]):A[i],A[j]=A[j],A[i]
+                
+SyntaxError: invalid syntax
+def bbsrt(A,UD=False):
+    n = len(A)
+    for i in range(n-1):
+        for j in range(n-1,i,-1):
+            if UD:
+                if labsc(A[i],A[j]):A[i],A[j]=A[j],A[i]
+            else :
+                if !(labsc(A[i],A[j])):A[i],A[j]=A[j],A[i]
+                
+SyntaxError: invalid syntax
+def bbsrt(A,UD=False):
+    n = len(A)
+    for i in range(n-1):
+        for j in range(n-1,i,-1):
+            if UD:
+                if labsc(A[i],A[j]):A[i],A[j]=A[j],A[i]
+            else :
+                if (!(labsc(A[i],A[j]))):A[i],A[j]=A[j],A[i]
+                
+SyntaxError: invalid syntax
+def bbsrt(A,UD=False):
+    n = len(A)
+    for i in range(n-1):
+        for j in range(n-1,i,-1):
+            if UD:
+                if labsc(A[i],A[j]):A[i],A[j]=A[j],A[i]
+            else :
+                if labsc(A[i],A[j]) == False :A[i],A[j]=A[j],A[i]
+
+                
+
+def bbsrt(A,UD=False):
+    def labsc(H1,H2):
+        h1=[abs(e) for e in H1]
+        h2=[abs(e) for e in H2]
+        return h1>h2
+    n = len(A)
+    for i in range(n-1):
+        for j in range(n-1,i,-1):
+            if UD:
+                if labsc(A[i],A[j]):A[i],A[j]=A[j],A[i]
+            else :
+                if labsc(A[j],A[i]):A[i],A[j]=A[j],A[i]
+
+                
+B=[[1,2,3],[-5,2,1],[3,1,1]]
+B
+[[1, 2, 3], [-5, 2, 1], [3, 1, 1]]
+bbsrt(B)
+B
+[[-5, 2, 1], [3, 1, 1], [1, 2, 3]]
+B = [[1,2,3],[-5,2,1],[1,3,1]]
+b
+((1, 2, 3), (4, 5, 6), (7, 8, 9))
+B
+[[1, 2, 3], [-5, 2, 1], [1, 3, 1]]
+bbsrt(B)
+B
+[[-5, 2, 1], [1, 3, 1], [1, 2, 3]]
+B = [[1,2,3],[-5,2,1],[1,-3,1]]
+B
+[[1, 2, 3], [-5, 2, 1], [1, -3, 1]]
+bbsrt(B)
+B
+[[-5, 2, 1], [1, -3, 1], [1, 2, 3]]
+C=[B[i]+[i]for i in range(3)]
+C
+[[-5, 2, 1, 0], [1, -3, 1, 1], [1, 2, 3, 2]]
+K=[6,8,10]
+C=[B[i]+[K[i]]for i in range(3)]
+C
+[[-5, 2, 1, 6], [1, -3, 1, 8], [1, 2, 3, 10]]
+K=['x','y','z']
+C=[B[i]+[K[i]]for i in range(3)]
+C
+[[-5, 2, 1, 'x'], [1, -3, 1, 'y'], [1, 2, 3, 'z']]
+K=[6,8,10]
+C=[B[i]+[K[i]]for i in range(3)]
+C
+[[-5, 2, 1, 6], [1, -3, 1, 8], [1, 2, 3, 10]]
+C=[C[i]+[K[i]]for i in range(3)]
+C
+[[-5, 2, 1, 6, 6], [1, -3, 1, 8, 8], [1, 2, 3, 10, 10]]
+C=[B[i]+[K[i]]for i in range(3)]
+C
+[[-5, 2, 1, 6], [1, -3, 1, 8], [1, 2, 3, 10]]
+K+=[9]
+K
+[6, 8, 10, 9]
+C
+[[-5, 2, 1, 6], [1, -3, 1, 8], [1, 2, 3, 10]]
+A
+[[1, 2, 3], [7, 6, 5], [7, 8, 9]]
+Acopy = A
+Acopy
+[[1, 2, 3], [7, 6, 5], [7, 8, 9]]
+A=[[1,0,2],[-3,1,1],[2,5,4]]
+K=[5,4,6]
+M=[A[i]+[K[i]]for i in range(len(K))]
+M
+[[1, 0, 2, 5], [-3, 1, 1, 4], [2, 5, 4, 6]]
+bbsrt(M)
+M
+[[-3, 1, 1, 4], [2, 5, 4, 6], [1, 0, 2, 5]]
+BO=[M[0][i]/M[0][0] for i in range(len(M[0]))]
+BO
+[1.0, -0.3333333333333333, -0.3333333333333333, -1.3333333333333333]
+B1=[BO[i]*M[1][i]for i in range(len(M[0]))]
+>>> B1
+[2.0, -1.6666666666666665, -1.3333333333333333, -8.0]
+>>> for i in range(len(B1)):M[1][i]-=B1[i]
+... 
+>>> M
+[[-3, 1, 1, 4], [0.0, 6.666666666666666, 5.333333333333333, 14.0], [1, 0, 2, 5]]
+>>> B2=[BO[i]*M[2][i]for i in range(len(M[2]))]
+>>> B2
+[1.0, -0.0, -0.6666666666666666, -6.666666666666666]
+>>> for i in range(len(B2)):M[2][i]-=B2[i]
+... 
+>>> M
+[[-3, 1, 1, 4], [0.0, 6.666666666666666, 5.333333333333333, 14.0], [0.0, 0.0, 2.6666666666666665, 11.666666666666666]]
+>>> def ctk(M):
+...     for b in M:
+...         print(b)
+... 
+...         
+>>> ctk(M)
+[-3, 1, 1, 4]
+[0.0, 6.666666666666666, 5.333333333333333, 14.0]
+[0.0, 0.0, 2.6666666666666665, 11.666666666666666]
+>>> BO=[M[1][i]/M[1][1] for i in range(len(M[1]))]
+>>> BO
+[0.0, 1.0, 0.8, 2.1]
+>>> B2=[BO[i]*M[2][i]for i in range(len(M[2]))]
+>>> for i in range(len(B2)):M[2][i]-=B2[i]
+... 
+>>> ctk(M)
+[-3, 1, 1, 4]
+[0.0, 6.666666666666666, 5.333333333333333, 14.0]
+[0.0, 0.0, 0.5333333333333332, -12.833333333333334]
+>>> X1 = M[2][3]/M[2][2]
+>>> X2 = (M[1][3]-X1*M[1][2])/M[1][1]
+>>> X3 = (M[0][3]-X1*M[0][2]-X2*M[0][1])/M[0][0]
+>>> X1
+-24.062500000000007
+>>> X2
+21.35000000000001
+>>> x3
+Traceback (most recent call last):
+  File "<pyshell#161>", line 1, in <module>
+    x3
+NameError: name 'x3' is not defined. Did you mean: 'X3'?
+>>> X3
+-2.2374999999999994

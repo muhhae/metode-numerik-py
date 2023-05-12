@@ -1,0 +1,9 @@
+ft = lambda x:x-2
+>>> xa,xb,i=0,10,0
+>>> while True:
+...     i += 1
+...     xc = xb-f(xb)/ft(xb)
+...     if abs(f(xc))<0.1:
+...         print('Akar :',xc,'dalam : %d iterasi. '%i)
+...         break
+...     xb = xc
