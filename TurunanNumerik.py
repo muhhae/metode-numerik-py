@@ -1,5 +1,6 @@
-ft1cd = lambda yy,h : (yy[2] - yy[0]) / (2 * h)
-ft1cc = lambda f,x,h: ft1cd ([f(x-h) , 0 ,f(x+h)],h)
-ft1rd = lambda yy, h:(yy[1] - yy[0])/h
-ft1rc = lambda f, x, h: ft1rd([f(x), f(x+h)], h)
-ft2cd = lambda f, x, h:
+def midTurunanDiskrit1(list_x, list_y) :
+    h = list_x[1] - list_x[0]
+    return (-1 * list_y[0] + list_y[2] ) / (2 * h)  
+
+def midTurunanKontinu1(f,x, h):
+    return (-1 * f(x-h) + f(x+h) ) / (2 * h)

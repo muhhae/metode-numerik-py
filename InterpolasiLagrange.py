@@ -25,8 +25,8 @@ def StringLagrangeFunction(x_index, x_list):
     print('\n')
     return func
 
-def StringInterpolasiLagrange(x_list, y_list):
-    func = ''
+def StringInterpolasiLagrange(x_list, y_list, namafungsi = 'f'):
+    func = namafungsi + ' = lambda x:'
     n = len(x_list)
     
     for i in range(n) :

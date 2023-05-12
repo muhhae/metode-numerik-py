@@ -45,7 +45,7 @@ def newtonraphson(xr, f, ft, error, imax):
     print("Metode Newton Raphson\n")
     i = 1
     while True:
-        print(i, 'x = ', xr, 'f(x) = ', f(xr))
+        print(i, 'x = ', xr, 'f(x) = ', f(xr), 'ft(xr) = ', ft(xr))
         if (abs(f(xr)) < error) or i >= imax:
             print('akar = ', xr)
             break
