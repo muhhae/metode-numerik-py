@@ -34,3 +34,27 @@ def StringInterpolasiLagrange(x_list, y_list, namafungsi = 'f'):
         func += '(' + str(y_list[i]) + ' * ' + StringLagrangeFunction(i, x_list) + ')'
         print(i, func, '\n')
     return func
+
+
+
+def stringInterpolasilagrangeClean(x_list, y_list, namafungsi = 'f'):
+    func = namafungsi + ' = lambda x:'
+    n = len(x_list)
+    
+    for i in range(n) :
+        if i > 0 : func += ' + '
+        func += '(' + str(y_list[i]) + ' * ' + StringLagrangeFunction(i, x_list) + ')'
+        print(i, func, '\n')
+    return func
+
+def stringPembilangL(x_index, x_list):
+    func = ''
+    n = len(x_list)
+    pertama = True
+    for i in range(n):
+        if i != x_index :
+            if pertama == False : func += ' * '
+            func +='(' + 'x' + ' - ' +  str(x_list[i]) + ')'
+            pertama = False
+    print('L('+ str(i) +')'+'=')
+    return func

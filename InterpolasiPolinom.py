@@ -1,7 +1,9 @@
 from AkarSPLGauss import *
 
-print("\n~~InterpolasiPolinom Function List~~\n")
-print("interpolasi(matrix_x, matrix_y, nama_fungsi = 'f') \n\t- mendapatkan fungsi dari data x dan y dengan interpolasi polinomial\n")
+def list():
+    print("\n~~InterpolasiPolinom Function List~~\n")
+    print("interpolasi(matrix_x, matrix_y, nama_fungsi = 'f') \n\t- mendapatkan fungsi dari data x dan y dengan interpolasi polinomial\n")
+    print("regresi(orde, matrix_x, matrix_y, nama_fungsi = 'f')\n")
 
 def interpolasi(matrix_x, matrix_y, nama_fungsi = 'f') :
     m = [[matrix_x[i]**j for j in range(len(matrix_x))]for i in range(len(matrix_x))]

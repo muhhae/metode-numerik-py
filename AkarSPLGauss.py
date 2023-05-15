@@ -1,11 +1,13 @@
-print("\n ~~AkarSPLGauss function list~~ \n")
-print("ctk(M) \n\t- print list\n")
-print("bbsrt(A) \n\t- mengurutkan dari besar - kecil, absolute\n")
-print("gaussJordan(matrixKoef,matrixKonst) \n\t- eliminasi Gauss Jordan\n")
-print("gaussJordanHasil(matrixKoef, matrixKonst) \n\t- menghasilkan list dari solusi dengan eliminasi Gauss Jordan\n")
-print("gaussSaja(matrixKoef,matrixKonst) \n\t- Elimininasi Gauss\n")
-print("gaussSeidel(matrixKoef,matrixKonst,batasIterasi) \n\t- Gauss seidel\n")
-print("iterasiJacobi(matrixKoef,matrixKonst,batasIterasi) \n\t- iterasi jacobi\n")
+def list():
+    print("\n ~~AkarSPLGauss function list~~ \n")
+    print("ctk(M) \n\t- print list\n")
+    print("bbsrt(A) \n\t- mengurutkan dari besar - kecil, absolute\n")
+    print("gaussJordan(matrixKoef,matrixKonst) \n\t- eliminasi Gauss Jordan\n")
+    print("gaussJordanHasil(matrixKoef, matrixKonst) \n\t- menghasilkan list dari solusi dengan eliminasi Gauss Jordan\n")
+    print("gaussSaja(matrixKoef,matrixKonst) \n\t- Elimininasi Gauss\n")
+    print("gaussSeidel(matrixKoef,matrixKonst,batasIterasi) \n\t- Gauss seidel\n")
+    print("iterasiJacobi(matrixKoef,matrixKonst,batasIterasi) \n\t- iterasi jacobi\n")
+
 
 def ctk(M):
     for b in M:

@@ -1,12 +1,12 @@
 from math import *
 
-print("\n~~FungsiMetnum Function List~~\n")
-print("bagidua(xa, xb, f, error, imax) \n\t- metode bagi dua \n")
-print("regulafalsi(xa,xb, f, error, imax) \n\t- metode regula falsi \n")
-print("newtonraphson(xr, f, ft, error, imax) \n\t- metode newton raphson \n")
-print("secant(xa, xb, f, error, imax) \n\t- metode secant \n")
-print("fungsi(xa,xb,xr, f,ft, error, imax) \n\t- semua metode \n")
-
+def list():
+    print("\n~~FungsiMetnum Function List~~\n")
+    print("bagidua(xa, xb, f, error, imax) \n\t- metode bagi dua \n")
+    print("regulafalsi(xa,xb, f, error, imax) \n\t- metode regula falsi \n")
+    print("newtonraphson(xr, f, ft, error, imax) \n\t- metode newton raphson \n")
+    print("secant(xa, xb, f, error, imax) \n\t- metode secant \n")
+    print("semua(xa,xb,xr, f,ft, error, imax) \n\t- semua metode \n")
 
 def bagidua(xa, xb, f, error, imax):
     print("Metode Bagi dua\n")
@@ -46,12 +46,10 @@ def newtonraphson(xr, f, ft, error, imax):
     i = 1
     while True:
         print(i, 'x = ', xr, 'f(x) = ', f(xr), 'ft(xr) = ', ft(xr))
-        if (abs(f(xr)) < error) or i >= imax:
-            print('akar = ', xr)
-            break
-        else:
-            xr = xr - f(xr)/ft(xr)
-    i+=1
+        if (abs(f(xr)) < error) or i >= imax: break
+        else : xr = xr - f(xr)/ft(xr)
+        i+=1
+    return xr
 
 def secant(xa, xb, f, error, imax):
     print("Metode secant\n")
@@ -67,7 +65,7 @@ def secant(xa, xb, f, error, imax):
             xa, xb = xc, xa
             i += 1
     
-def fungsi(xa,xb,xr, f,ft, error, imax):
+def semua(xa,xb,xr, f,ft, error, imax):
     bagidua(xa, xb, f, error, imax)
     print('\n')
     regulafalsi(xa, xb, f, error, imax)
