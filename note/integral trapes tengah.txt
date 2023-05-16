@@ -1,0 +1,62 @@
+Python 3.11.2 (tags/v3.11.2:878ead1, Feb  7 2023, 16:38:35) [MSC v.1934 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+f = lambda x:1/(1+x)
+itrapesion = lambda f, a, b : abs((b-a))/2 * (f(b) + f(a))
+itrapesion = lambda f, a, b : abs((b-a)/2 * (f(b) + f(a)))
+ititiktengah = lambda f, a, b : abs((b-a) * f((a+b)/2))
+ititiktengah(f, 0, 10)
+1.6666666666666665
+xa = 0;
+h = 0.25
+luas = 0
+while xa < 1 :
+    xb = xa + h
+    luas += itrapesium(f,xa,xb)
+    xa = xb
+    print(xa, luas)
+
+Traceback (most recent call last):
+  File "D:\Other\PyCharm Community Edition 2022.3.3\plugins\python-ce\helpers\pydev\pydevconsole.py", line 364, in runcode
+    coro = func()
+           ^^^^^^
+  File "<input>", line 3, in <module>
+NameError: name 'itrapesium' is not defined. Did you mean: 'itrapesion'?
+itrapesium = lambda f, a, b : abs((b-a)/2 * (f(b) + f(a)))
+while xa < 1 :
+    xb = xa + h
+    luas += itrapesium(f,xa,xb)
+    xa = xb
+    print(xa, luas)
+
+0.25 0.225
+0.5 0.4083333333333333
+0.75 0.5630952380952381
+1.0 0.6970238095238095
+luas = 0
+xa = 0;
+while xa < 1 :
+    xb = xa + h
+    luas += ititiktengah(f,xa,xb)
+    xa = xb
+    print(xa, luas)
+
+0.25 0.2222222222222222
+0.5 0.40404040404040403
+0.75 0.5578865578865579
+1.0 0.6912198912198912
+
+def ITrapesium(f, a, b, n=1):
+    xa = a; h = (b-a) / n;luas = 0
+    while xa < b :
+        xb = xa + h
+        luas += itrapesium(f, xa, xb)
+        xa = xb
+    return luas
+
+def ITitiktengah(f, a, b, n=1):
+    xa = a; h = (b-a) / n;luas = 0
+    while xa < b :
+        xb = xa + h
+        luas += ititiktengah(f, xa, xb)
+        xa = xb
+    return luas
