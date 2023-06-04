@@ -54,7 +54,7 @@ def INC2(f, a, b, n=1, out = True):
         luas += abs(I(a))    
         if out:
             print("(", a, ",", a + h, ") = ", I(a),sep="")
-            print("luas = ", luas, "\n")
+            print("I = ", luas, "\n")
         a = a + h
     print("I =", luas)
     return luas
@@ -69,7 +69,7 @@ def INC3(f, a, b, n=1, out = True):
         luas += abs(I(a))
         if out:
             print("(", a, ",", a + h, ") = ", I(a),sep="")
-            print("luas = ", luas, "\n")
+            print("I = ", luas, "\n")
         a = a + h
     print("I =", luas)
     return luas
@@ -84,10 +84,13 @@ def INC4(f, a, b, n=1, out = True):
         luas += abs(I(a))
         if out:
             print("(", a, ",", a + h, ") = ", I(a),sep="")
-            print("luas = ", luas, "\n")
+            print("I = ", luas, "\n")
         a = a + h
     print("I =", luas)
     return luas
+
+# def NewtonCotes(f, a, b, n, o, out = True):    
+    
 
 def GaussKuadratur(FungsiAwal, a, b, n=2, out = True):
     print("\nMetode Gauss Kuadratur Orde", n)
@@ -98,13 +101,13 @@ def GaussKuadratur(FungsiAwal, a, b, n=2, out = True):
             [1, 1],
             [0.5555555555555556, 0.8888888888888888, 0.5555555555555556],
             [0.3478548451374538, 0.6521451548625461, 0.6521451548625461, 0.3478548451374538],
-            [0.2369268850561891,0.4786286704993665,0.5688888888888889,0.4786286704993665, 0.2369268850561891]
+            [0.2369268850561891, 0.4786286704993665, 0.5688888888888889, 0.4786286704993665, 0.2369268850561891]
         ]
     x = [
             [-0.5773502691896257, 0.5773502691896257],
             [-0.7745966692414834, 0, 0.7745966692414834],
             [-0.8611363115940526, -0.3399810435848563, 0.3399810435848563, 0.8611363115940526],
-            [-0.9061798459386640,-0.5384693101056831,0 ,0.5384693101056831,0.9061798459386640]
+            [-0.9061798459386640, -0.5384693101056831, 0 ,0.5384693101056831, 0.9061798459386640]
         ]
     
     def f(t):
@@ -120,5 +123,3 @@ def GaussKuadratur(FungsiAwal, a, b, n=2, out = True):
     
     print("I =", total * (b-a) / 2)
     return total * (b-a) / 2
-    
-    
