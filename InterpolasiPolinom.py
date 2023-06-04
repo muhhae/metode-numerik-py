@@ -47,3 +47,6 @@ def regresi(orde, matrix_x, matrix_y, nama_fungsi="f"):
         if i < len(hasil) - 1:
             ff = ff + "+"
     return ff
+
+def regresiLinear(orde, matrix_x, matrix_y, nama_fungsi="f"):
+    a
