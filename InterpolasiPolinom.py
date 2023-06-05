@@ -34,3 +34,21 @@ def RegresiPolinom(x, y, orde, f = "f"):
     ctk(my)  
     
     return getFunc(gaussJordanHasil(m, my), f)
+
+def InterpolasiNewton(x, y, f = "f"):
+    z = y
+    a = [[] for i in range(len(x) - 1)]
+    for j in range (len(x) - 1) :
+        for i in range (len(x) - 1 - j) :
+            a[j] += [(z[i] - z[i + 1]) / (x[i] - x[i + j + 1])]
+            
+    z = a[j]
+    
+    koef = [a[i][0] for i in range(len(x) - 1)] 
+    
+    fungsi = f + "= lambda x:" + str(y[0])
+    for i in range(len(x)-1):
+        fungsi += " + " + str(koef[i]) + " * (x - " + str(x[i]) + ")"
+        for j in range(i) :
+            fungsi += " * (x - " + str(x[j]) + ")"
+    return fungsi
