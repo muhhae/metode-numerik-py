@@ -1,3 +1,5 @@
+from rich import *
+
 def LagrangeFunction(x_input, x_index, x_list):
     n = len(x_list)
     hasil = 1
@@ -34,8 +36,6 @@ def StringInterpolasiLagrange(x_list, y_list, namafungsi = 'f'):
         func += '(' + str(y_list[i]) + ' * ' + StringLagrangeFunction(i, x_list) + ')'
         print(i, func, '\n')
     return func
-
-
 
 def stringInterpolasilagrangeClean(x_list, y_list, namafungsi = 'f'):
     func = namafungsi + ' = lambda x:'

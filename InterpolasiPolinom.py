@@ -1,52 +1,36 @@
 from AkarSPLGauss import *
-
+from rich import *
 
 def list():
     print("\n~~InterpolasiPolinom Function List~~\n")
-    print(
-        "interpolasi(matrix_x, matrix_y, nama_fungsi = 'f') \n\t- mendapatkan fungsi dari data x dan y dengan interpolasi polinomial\n"
-    )
-    print("regresi(orde, matrix_x, matrix_y, nama_fungsi = 'f')\n")
+    print("interpolasi(matrix_x, matrix_y, nama_fungsi = 'f') \n\t- mendapatkan fungsi dari data x dan y dengan interpolasi polinomial\n")
 
+def getFunc(hasil, f = 'f'):
+    ff = f + "=lambda z:"
+    for i in range(len(hasil)):
+        ff = ff + "(" + str(hasil[i]) + ")*z**" + str(i)
+        if i < len(hasil) - 1:
+            ff = ff + "+"
 
-def interpolasi(matrix_x, matrix_y, nama_fungsi="f"):
+    print(ff)
+    return ff
+
+def InterpolasiPolinom(matrix_x, matrix_y, nama_fungsi="f"):
     m = [[matrix_x[i] ** j for j in range(len(matrix_x))] for i in range(len(matrix_x))]
     ctk(m)
-    hasil = gaussJordanHasil(m, matrix_y)
-    ff = nama_fungsi + "=lambda z:"
-    for i in range(len(hasil)):
-        ff = ff + "(" + str(hasil[i]) + ")*z**" + str(i)
-        if i < len(hasil) - 1:
-            ff = ff + "+"
-    return ff
+    
+    return getFunc(gaussJordanHasil(m, matrix_y), nama_fungsi)
 
-
-def regresi(orde, matrix_x, matrix_y, nama_fungsi="f"):
+def RegresiPolinom(x, y, orde, f = "f"):
     m = [[0] * (orde + 1)] * (orde + 1)
-    m[0] = [orde] + [
-        sum([matrix_x[i] ** j for i in range(len(matrix_x))])
-        for j in range(1, orde + 1)
-    ]
-    for l in range(1, orde + 1):
-        m[l] = [
-            sum([matrix_x[i] ** j for i in range(len(matrix_x))])
-            for j in range(l, orde + 1 + l)
-        ]
+    m[0][0] = len(x)
+    for i in range(1, orde + 1):
+        m[0][i] = sum([a**i for a in x])
+    for i in range(1, orde + 1):
+        m[i] = [sum([a**j for a in x]) for j in range(i, orde + i + 1)]    
     ctk(m)
-    my = [
-        sum([(matrix_x[i] ** j) * matrix_y[i] for i in range(len(matrix_x))])
-        for j in range(orde + 1)
-    ]
-    ctk(my)
-
-    hasil = gaussJordanHasil(m, my)
-
-    ff = nama_fungsi + "=lambda z:"
-    for i in range(len(hasil)):
-        ff = ff + "(" + str(hasil[i]) + ")*z**" + str(i)
-        if i < len(hasil) - 1:
-            ff = ff + "+"
-    return ff
-
-def regresiLinear(orde, matrix_x, matrix_y, nama_fungsi="f"):
-    a
+    
+    my = [sum(x[j]**i * y[j] for j in range(len(x))) for i in range(orde + 1)]
+    ctk(my)  
+    
+    return getFunc(gaussJordanHasil(m, my), f)

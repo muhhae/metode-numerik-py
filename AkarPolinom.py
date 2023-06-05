@@ -1,4 +1,5 @@
 from math import *
+from rich import *
 
 def list():
     print("\n~~FungsiMetnum Function List~~\n")
@@ -6,7 +7,7 @@ def list():
     print("regulafalsi(xa,xb, f, error, imax) \n\t- metode regula falsi \n")
     print("newtonraphson(xr, f, ft, error, imax) \n\t- metode newton raphson \n")
     print("secant(xa, xb, f, error, imax) \n\t- metode secant \n")
-    print("semua(xa,xb,xr, f,ft, error, imax) \n\t- semua metode \n")
+    print("all(xa,xb,xr, f,ft, error, imax) \n\t- semua metode \n")
 
 def bagidua(xa, xb, f, error, imax):
     print("Metode Bagi dua\n")
@@ -65,7 +66,7 @@ def secant(xa, xb, f, error, imax):
             xa, xb = xc, xa
             i += 1
     
-def semua(xa,xb,xr, f,ft, error, imax):
+def all(xa,xb,xr, f,ft, error, imax):
     bagidua(xa, xb, f, error, imax)
     print('\n')
     regulafalsi(xa, xb, f, error, imax)

@@ -1,3 +1,5 @@
+from rich import *
+
 def list():
     print("\n ~~AkarSPLGauss function list~~ \n")
     print("ctk(M) \n\t- print list\n")
@@ -33,12 +35,11 @@ def matrixTereduksi(matrix):
     for i in range(len(matrix)):
         for j in range(i+1, len(matrix)):
             barisEle = matrix[j]
-            print("baris elementer = ", end='')
-            printBaris(barisEle, True)
-            print('baris ', i+1, 'dikurangi baris elementer * ', matrix[i][j],'\n') 
+            # print("baris elementer = ", end='')
+            # printBaris(barisEle, True)
+            # print('baris ', i+1, 'dikurangi baris elementer * ', matrix[i][j],'\n') 
             matrix[i] = [matrix[i][k]-barisEle[k]*matrix[i][j] for k in range(len(matrix[i]))]
             ctk(matrix)
-
 
 def hasilX(baris,kolomX, Arrhasil):
     hasil = baris[len(baris)-1]
@@ -51,16 +52,16 @@ def hasilX(baris,kolomX, Arrhasil):
 def OBE(A):
     for i in range(len(A)-1):
         bbsrt(A)
-        print("Baris ", i+1,'dibagi ', A[i][i])
+        # print("Baris ", i+1,'dibagi ', A[i][i])
         A[i] = [A[i][j]/A[i][i] for j in range(len(A[i]))]
         ctk(A)
-        print("baris elementer = ", end='')
-        printBaris(A[i], True)
+        # print("baris elementer = ", end='')
+        # printBaris(A[i], True)
         for j in range(i+1, len(A)):
-            print('baris ', j+1, 'dikurangi baris elementer * ', A[j][i],'\n') 
+            # print('baris ', j+1, 'dikurangi baris elementer * ', A[j][i],'\n') 
             A[j] = [A[j][k]-A[i][k]*A[j][i] for k in range(len(A[i]))]
-            ctk(A)
-    print("Baris ", len(A),'dibagi ', A[len(A)-1][len(A)-1])
+            # ctk(A)
+    # print("Baris ", len(A),'dibagi ', A[len(A)-1][len(A)-1])
     A[len(A)-1] = [A[len(A)-1][j]/A[len(A)-1][len(A)-1] for j in range(len(A[len(A)-1]))]
     ctk(A)
     

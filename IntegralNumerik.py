@@ -1,4 +1,5 @@
 from math import *
+from rich import *
 
 def list():
     print("Trapesium(f, a, b, n=1, out = True)")
@@ -6,6 +7,7 @@ def list():
     print("INC2(f, a, b, n=1, out = True)")
     print("INC3(f, a, b, n=1, out = True)")
     print("INC4(f, a, b, n=1, out = True)")
+    print("GaussKuadratur(FungsiAwal, a, b, n=2, out = True)")
 
 def all(f, a, b, n = 4, out = True):
     Trapesium(f, a, b, n, out)
@@ -17,7 +19,7 @@ def all(f, a, b, n = 4, out = True):
         GaussKuadratur(f, a, b, i, out)
 
 def Trapesium(f, a, b, n=1, out = True):
-    print("\nMetode Trapesium")
+    print("[bold yellow]\nMetode Trapesium[/bold yellow]")
     I = lambda a, b: abs((b - a) / 2 * (f(b) + f(a)))
     xa = a; h = (b-a) / n;luas = 0
     while xa < b :
@@ -31,7 +33,7 @@ def Trapesium(f, a, b, n=1, out = True):
     return luas
 
 def TitikTengah(f, a, b, n=1, out = True):
-    print("\nMetode Titik Tengah")
+    print("[bold yellow]\nMetode Titik Tengah[/bold yellow]")
     I = lambda a, b: abs((b - a) * f((a + b) / 2))
     xa = a; h = (b-a) / n;luas = 0
     while xa < b :
@@ -45,7 +47,7 @@ def TitikTengah(f, a, b, n=1, out = True):
     return luas
 
 def INC2(f, a, b, n=1, out = True):
-    print("\nNewton-Cotes Simpson 1/3")
+    print("[bold yellow]\nNewton-Cotes Simpson 1/3[/bold yellow]")
     h = (b-a) / n
     d = h / 2
     I = lambda a: 1 / 3 * d * (f(a) + 4 * f(a + d) + f(a + h))
@@ -60,7 +62,7 @@ def INC2(f, a, b, n=1, out = True):
     return luas
 
 def INC3(f, a, b, n=1, out = True):
-    print("\nNewton-Cotes Simpson 3/8")
+    print("[bold yellow]\nNewton-Cotes Simpson 3/8[/bold yellow]")
     h = (b - a) / n
     d = h/3
     I = lambda a: 3 / 8 * d * (f(a) + 3 * f(a + d) + 3 * f(a + 2 * d) + f(a + h))
@@ -75,7 +77,7 @@ def INC3(f, a, b, n=1, out = True):
     return luas
 
 def INC4(f, a, b, n=1, out = True):
-    print("\nNewton-Cotes Boole 2/45")
+    print("[bold yellow]\nNewton-Cotes Boole 2/45[/bold yellow]")
     h = (b - a) / n
     d = h/4
     I = lambda a: 2 / 45 * d * ( 7 * f(a) + 32 * f(a + d) + 12 * f(a + 2 * d) + 32 * f(a + 3 * d) + 7 * f(a + h))
@@ -93,7 +95,7 @@ def INC4(f, a, b, n=1, out = True):
     
 
 def GaussKuadratur(FungsiAwal, a, b, n=2, out = True):
-    print("\nMetode Gauss Kuadratur Orde", n)
+    print("[bold yellow]\nMetode Gauss Kuadratur Orde[/bold yellow]", n)
     
     if abs(b-a)<1e-10: return 0
     

@@ -1,3 +1,5 @@
+from rich import *
+
 def midTurunanKontinu(f, x, h, turunan_ke):
     K = [[0, -1, 0, 1, 0], [0, 1, -2, 1, 0], [-1, 2, 0, -2, 1], [1, -4, 6, -4, 1]]
     pembagi = h ** (turunan_ke)
