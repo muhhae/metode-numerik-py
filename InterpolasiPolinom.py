@@ -4,6 +4,8 @@ from rich import *
 def list():
     print("\n~~InterpolasiPolinom Function List~~\n")
     print("interpolasi(matrix_x, matrix_y, nama_fungsi = 'f') \n\t- mendapatkan fungsi dari data x dan y dengan interpolasi polinomial\n")
+    print("RegresiPolinom(x, y, orde, f = "f"):")
+    print("def InterpolasiNewton(x, y, f = "f"):")
 
 def getFunc(hasil, f = 'f'):
     ff = f + "=lambda z:"
