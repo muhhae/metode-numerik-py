@@ -6,6 +6,8 @@ from rich.table import Table
 def error(f, x, y):
     table = Table(title=" Error ")
     
+    table.add_column("Y", style="cyan", no_wrap=True, justify = "left")
+    table.add_column("Yt", style="magenta", no_wrap=True, justify = "left")
     table.add_column("Error", style="cyan", no_wrap=True, justify = "left")
     table.add_column("Error %", style="magenta", no_wrap=True, justify = "left")
     
@@ -20,8 +22,8 @@ def error(f, x, y):
     yRata = sum(abs(a) for a in y) / len(y)
     erRata = sum(er) / len(er)
     
-    for a in er:
-        table.add_row(str(a), str(a/abs(b) * 100) + " %")
+    for (a,b,c) in zip(er,y,x):
+        table.add_row(str(b), str(f(c)), str(a), str(a/abs(b) * 100) + " %")
 
     print(table)
     print("\nError rata : ", erRata, "= ", erRata / yRata * 100, "%")

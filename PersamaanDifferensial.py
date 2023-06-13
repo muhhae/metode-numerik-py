@@ -26,6 +26,9 @@ def hitung(f, x, y, h, xb, ft):
         table.add_row(str(x), str(y))
         y = ft(f, x, y, h)
         x += h
+    table.add_row(str(x), str(y))
+    y = ft(f, x, y, h)
+    x += h
     print(table)
 
 def euler(f, x, y, h, xb):

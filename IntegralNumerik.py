@@ -120,8 +120,8 @@ def GaussKuadratur(FungsiAwal, a, b, n=2, out = True):
     n -= 2
     for i in range(n + 2):
         if out :
-            print("f(", x[n][i], ") * ", c[n][i], " = ", f(x[n][i]) * c[n][i],'\n', sep="")
-        total += f(x[n][i]) * c[n][i]
+            print("f(", x[n][i], ") * ", c[n][i], " = ", abs(f(x[n][i])) * c[n][i],'\n', sep="")
+        total += abs(f(x[n][i])) * c[n][i]
     
     print("I =", total * (b-a) / 2)
     return total * (b-a) / 2
